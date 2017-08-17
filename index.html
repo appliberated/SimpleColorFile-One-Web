@@ -3,14 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Simple Color File - One</title>
+        <title>Simple Color File - One - v0.1</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -19,9 +16,12 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <p>Type or paste a color name or code:</p>
-        <input id="color" type="text">
-        <p><a id="download" href="" download="color.html" class="button">Download Simple Color File</a></p>
+        <div class="container">
+            <h1>Simple Color File</h1>
+            <p>Type or paste a color code or name:</p>
+            <p><input class="primary-input" id="color" type="text" spellcheck="false"></p>
+            <p><a id="download" href="" download="color.html" class="button primary-button">Download</a></p>
+        </div>
 
         <script src="js/main.js"></script>
 

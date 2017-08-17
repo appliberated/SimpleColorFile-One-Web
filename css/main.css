@@ -1,9 +1,53 @@
-.button {
-    background: #eee;
-    display: inline-block;
+body, input {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    padding: 0 2rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+.container {
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 2rem;
+    text-align: center;
+}
+
+.primary-input {
+    border: 1px solid #fff;
+    outline-color: #000;
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 80%;
+}
+
+.button {
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    outline-color: #000;
+    padding: 1rem 2rem;
+    text-decoration: none;
+}
+
+.button:hover, .button:focus {
+    background: #000;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.primary-button {
+    font-weight: bold;
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
 }
