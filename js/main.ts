@@ -36,19 +36,42 @@ class SCFGen {
 }
 
 
-let pocofi = new SCFGen();
+class SCFApp {
 
-let colorElement = <HTMLInputElement>document.getElementById("color");
+    private color: string;
+    private scfGen: SCFGen;
+    private colorInput : HTMLInputElement;
+    private downloadAnchor : HTMLAnchorElement;
 
-let downloadAnchor = <HTMLAnchorElement>document.getElementById("download");
-downloadAnchor.addEventListener("click", function (e) {
-    pocofi.color = colorElement.value;
-    pocofi.updateDownloadAnchor(downloadAnchor);
-    return true;
-});
 
-colorElement.addEventListener("input", function(e) {
-    document.body.style.backgroundColor = colorElement.value;
-    console.log(document.body.style.backgroundColor);
-    
-})
+    private onColorInputInput = (event) => {
+        document.body.style.backgroundColor = "";
+        document.body.style.backgroundColor = this.colorInput.value;
+
+        if (document.body.style.backgroundColor != "") {
+            this.color = this.colorInput.value;
+            this.downloadAnchor.classList.remove("hidden");
+        } else {
+            this.downloadAnchor.classList.add("hidden");
+        }
+    }
+
+    private onDownloadAnchorClick = (event) => {
+        this.scfGen.color = this.color;
+        this.scfGen.updateDownloadAnchor(this.downloadAnchor);
+        return true;
+    }
+
+    attachEvents() {
+        this.scfGen = new SCFGen();
+
+        this.colorInput = <HTMLInputElement>document.getElementById("color");
+        this.colorInput.addEventListener("input", this.onColorInputInput);
+
+        this.downloadAnchor = <HTMLAnchorElement>document.getElementById("download");
+        this.downloadAnchor.addEventListener("click", this.onDownloadAnchorClick);
+    }
+}
+
+let scfApp = new SCFApp();
+scfApp.attachEvents();
